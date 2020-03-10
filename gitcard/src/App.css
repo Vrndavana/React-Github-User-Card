@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* Custom */
+
+
+.user {
+  margin: 3% 0 3% 0;
+  padding: 3% 10%;
+  box-shadow: 5px 10px 18px blue;
+}
