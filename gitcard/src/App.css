@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: #282c34;
+  color: white;
 }
 
 .App-logo {
@@ -13,7 +15,7 @@
   }
 }
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -21,8 +23,8 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-}
+  
+} */
 
 .App-link {
   color: #61dafb;
@@ -43,6 +45,13 @@
 
 .user {
   margin: 3% 0 3% 0;
-  padding: 3% 10%;
+  padding: 3% 1%;
   box-shadow: 5px 10px 18px blue;
+}
+
+
+.followers {
+  background-color: #282c34;
+  margin: 1%;
+  box-shadow: 5px 10px 18px  blue;
 }

@@ -16,20 +16,31 @@ class App extends React.Component { // step 1
   };
 
 componentDidMount(){ // step 6
+  // Axios for my profile
   axios
-    .get("https://api.github.com/users/Vrndavana")
-    .then(res => {
-      console.log(res.data)
-      this.setState({ user: res.data});})
-    .catch(err => { console.log(err, 'this is an error');});
+ .get("https://api.github.com/users/Vrndavana")
+ .then(res => { console.log(res.data) 
+  this.setState({ user: res.data});})
+ .catch(err => { console.log(err, 'this is an error');});
+
+
+  //Axios for followers
+  axios
+  .get('https://api.github.com/users/Vrndavana/followers')
+  .then ( response => {console.log(response.data)
+  this.setState({ followers: response.data })})
+  .catch ( err => { console.log( err, 'this is an error')})
+
+
 }
+ 
 
 
 
   render() { // 2 now step 7 this.state
   return (
     <div className="App">
-      <header className='App-header'>
+    
         <h1>GitHub Profile</h1>
         <div className='user'>
           <Card>
@@ -41,7 +52,25 @@ componentDidMount(){ // step 6
             </CardBody>
           </Card>
         </div>
-      </header>
+    
+
+          <div className="followerscard">
+            {this.state.followers.map( person => {
+              return (
+              <div> 
+                <Card className="followers"> 
+                  <CardImg src={person.avatar_url} alt="followerimg" />
+                  <CardTitle><h3>{person.login}</h3></CardTitle>
+                </Card>
+              </div>
+              )
+              })}
+          </div>
+
+
+
+
+
     </div>
   );}
 }
